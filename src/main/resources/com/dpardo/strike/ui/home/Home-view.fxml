@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="homeBorderPane" maxHeight="600.0" maxWidth="960.0" minHeight="600.0" minWidth="960.0" prefHeight="600.0" prefWidth="960.0" style="-fx-background-color: linear-gradient(to bottom, #8a0000, #000000);" stylesheets="@menu-styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dpardo.strike.ui.home.HomeController">
+   <top>
+      <HBox fx:id="homeHBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10;" styleClass="menu-container" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="jugadoresButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="menu-button" text="JUGADORES" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Verdana Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="estadisticasButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="menu-button" text="ESTADISTICAS" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Verdana Bold" size="13.0" />
+               </font></Button>
+            <Button fx:id="equiposButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="menu-button" text="EQUIPOS" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Verdana Bold" size="13.0" />
+               </font></Button>
+            <Button fx:id="partidosButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="menu-button" text="PARTIDOS" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Verdana Bold" size="13.0" />
+               </font></Button>
+            <Button fx:id="clasificacionButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="menu-button" text="CLASIFICACION" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Verdana Bold" size="13.0" />
+               </font></Button>
+            <Button fx:id="resumenButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="menu-button" text="RESUMEN DE PARTIDO" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Verdana Bold" size="13.0" />
+               </font></Button>
+            <Button fx:id="ligaButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="menu-button" text="LIGA" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Verdana Bold" size="13.0" />
+               </font></Button>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <VBox maxHeight="200.0" maxWidth="250.0" minHeight="150.0" minWidth="150.0" prefHeight="200.0" prefWidth="150.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+         <children>
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="300.0" maxWidth="150.0" minHeight="300.0" minWidth="150.0" prefHeight="300.0" prefWidth="150.0" styleClass="sidebar-list" vbarPolicy="NEVER">
+               <content>
+                  <VBox fx:id="paisContenedor" maxHeight="400.0" maxWidth="150.0" minHeight="200.0" minWidth="150.0" prefHeight="400.0" prefWidth="150.0" />
+               </content>
+            </ScrollPane>
+         </children>
+         <BorderPane.margin>
+            <Insets left="20.0" />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+</BorderPane>

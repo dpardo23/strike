@@ -10,4 +10,5 @@ module com.dpardo.strike {
     opens com.dpardo.strike to javafx.fxml;
     opens com.dpardo.strike.ui.login to javafx.fxml;
     exports com.dpardo.strike;
+    opens com.dpardo.strike.ui.home to javafx.fxml;
 }

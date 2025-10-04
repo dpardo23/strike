@@ -1,0 +1,83 @@
+/* Estilos exclusivos para la barra de menú */
+
+.menu-container {
+    -fx-background-color: transparent; /* Fondo transparente para el contenedor */
+}
+
+.menu-button {
+    /* Fuente Verdana 13px en negrita */
+    -fx-font-family: "Verdana";
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+
+    -fx-background-color: transparent;
+    -fx-text-fill: white; /* Texto gris por defecto */
+
+    /* Borde inferior invisible para preparar el efecto hover */
+    -fx-border-color: transparent;
+    -fx-border-width: 2px 0px 2px 0px;
+    -fx-padding: 6px 12px 6px 12px;
+}
+
+.menu-button:hover {
+    -fx-text-fill: #D4D4D4;
+    /* Borde inferior se vuelve guindo al pasar el cursor */
+    -fx-border-color: transparent transparent #460809 transparent;
+}
+
+/* --- Estilos para los ítems de la lista de países --- */
+
+/* Estilo base para cada fila de país */
+.country-list-item {
+    -fx-background-color: transparent; /* Aseguramos que el fondo base sea transparente */
+    -fx-cursor: hand; /* Cambia el cursor a una "mano" para indicar que es clickeable */
+    -fx-padding: 5; /* Aseguramos el padding de 5px */
+    -fx-spacing: 10; /* Aseguramos el espaciado de 10px entre elementos */
+    /* Puedes añadir aquí más estilos base si los necesitas, como un color de texto predeterminado */
+}
+
+/* Estilo cuando el ratón pasa por encima (HOVER) */
+.country-list-item:hover {
+    -fx-background-color: #460809; /* Un gris oscuro, similar al de tu referencia */
+    -fx-background-radius: 5; /* Esquinas ligeramente redondeadas */
+}
+
+/* Estilo cuando se hace click/se selecciona (OPCIONAL, pero recomendado para el futuro) */
+/* Esto sería útil si algún día quieres que el país seleccionado mantenga un color diferente */
+.country-list-item:pressed {
+    -fx-background-color: #9F0712; /* Un gris un poco más claro al hacer click */
+}
+
+/* --- Estilo para el fondo del ScrollPane de la barra lateral --- */
+
+/* 1. Le das el color de fondo a la capa EXTERIOR del ScrollPane */
+.sidebar-list {
+    -fx-background-color: #1c1c1c; /* Elige tu color de fondo aquí */
+}
+
+/* 2. MUY IMPORTANTE: Le das el MISMO color de fondo a la capa INTERIOR (el viewport) */
+.sidebar-list .viewport {
+    -fx-background-color: #1c1c1c; /* Debe ser el mismo color que arriba */
+}
+
+/* 3. (OPCIONAL PERO RECOMENDADO) Aseguras que el VBox de adentro también sea transparente */
+.sidebar-list .content {
+    -fx-background-color: transparent;
+}
+
+/* --- Estilos para la Barra Lateral Izquierda (Sidebar) --- */
+
+/* Hacemos que el contenedor VBox principal de la barra lateral sea transparente */
+.sidebar {
+    -fx-background-color: transparent;
+}
+
+/* TAMBIÉN nos aseguramos de que el ScrollPane DENTRO de la barra lateral sea transparente */
+.sidebar .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+/* Y finalmente, nos aseguramos de que el VIEWPORT del ScrollPane sea transparente */
+.sidebar .scroll-pane .viewport {
+    -fx-background-color: transparent;
+}

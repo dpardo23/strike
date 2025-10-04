@@ -1,23 +1,17 @@
 package com.dpardo.strike.repository;
-
+import com.dpardo.strike.domain.SessionInfo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserRepository {
+    public SessionInfo authenticateAndRegisterSession(String username, String password) throws SQLException {
 
-    public boolean authenticateUser(String username, String password) throws SQLException {
+        String sql = "SELECT exito, id_usuario_logueado, session_pid, client_ip, client_port_num " +
+                "FROM iniciar_sesion_y_registrar(?, ?)";
 
-        Connection conn = DatabaseConnection.getConnection();
-
-        if (conn == null) {
-            throw new SQLException("No se pudo establecer la conexión con la base de datos.");
-        }
-
-        String sql = "SELECT COUNT(*) FROM \"user\" WHERE nombre_usuario = ? AND contrasena = ?";
-
-        try (conn;
+        try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, username);
@@ -25,11 +19,18 @@ public class UserRepository {
 
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
-                    return rs.getInt(1) > 0;
+                    boolean success = rs.getBoolean("exito");
+                    if (success) {
+                        // Si la autenticación fue exitosa, extraemos los datos
+                        int userId = rs.getInt("id_usuario_logueado");
+                        int pid = rs.getInt("session_pid");
+                        String clientIp = rs.getString("client_ip");
+                        int clientPort = rs.getInt("client_port_num");
+                        return new SessionInfo(userId, pid, clientIp, clientPort);
+                    }
                 }
             }
         }
-
-        return false;
+        return null;
     }
 }
