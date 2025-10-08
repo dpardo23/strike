@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane fx:id="homeBorderPane" maxHeight="600.0" maxWidth="960.0" minHeight="600.0" minWidth="960.0" prefHeight="600.0" prefWidth="960.0" style="-fx-background-color: linear-gradient(to bottom, #8a0000, #000000);" stylesheets="@menu-styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dpardo.strike.ui.home.HomeController">
+<BorderPane fx:id="homeBorderPane" maxHeight="600.0" maxWidth="960.0" minHeight="600.0" minWidth="960.0" prefHeight="600.0" prefWidth="960.0" style="-fx-background-color: linear-gradient(to bottom, #8a0000, #000000);" stylesheets="@../styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dpardo.strike.ui.read_only.HomeController">
    <top>
       <HBox fx:id="homeHBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10;" styleClass="menu-container" BorderPane.alignment="CENTER">
          <children>
@@ -42,17 +42,31 @@
       </HBox>
    </top>
    <left>
-      <VBox maxHeight="200.0" maxWidth="250.0" minHeight="150.0" minWidth="150.0" prefHeight="200.0" prefWidth="150.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+      <VBox maxHeight="336.0" maxWidth="250.0" minHeight="200.0" minWidth="150.0" prefHeight="336.0" prefWidth="150.0" styleClass="sidebar" BorderPane.alignment="CENTER">
          <children>
-            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="300.0" maxWidth="150.0" minHeight="300.0" minWidth="150.0" prefHeight="300.0" prefWidth="150.0" styleClass="sidebar-list" vbarPolicy="NEVER">
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" styleClass="sidebar-list" vbarPolicy="NEVER" VBox.vgrow="ALWAYS">
                <content>
-                  <VBox fx:id="paisContenedor" maxHeight="400.0" maxWidth="150.0" minHeight="200.0" minWidth="150.0" prefHeight="400.0" prefWidth="150.0" />
+                  <VBox fx:id="paisContenedor" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
                </content>
             </ScrollPane>
          </children>
          <BorderPane.margin>
-            <Insets left="20.0" />
+            <Insets left="20.0" top="50.0" />
          </BorderPane.margin>
       </VBox>
    </left>
+   <center>
+      <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" maxHeight="450.0" maxWidth="750.0" minHeight="450.0" minWidth="750.0" prefHeight="450.0" prefWidth="750.0" styleClass="main-content-scrollpane" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
+         <content>
+            <VBox fx:id="mainContentContainer" maxWidth="750.0" minWidth="750.0" prefWidth="750.0" spacing="15.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+         </content>
+         <BorderPane.margin>
+            <Insets right="20.0" />
+         </BorderPane.margin>
+      </ScrollPane>
+   </center>
 </BorderPane>

@@ -1,9 +1,11 @@
 package com.dpardo.strike.domain;
 
 /**
- * Esta clase es un 'record', una forma moderna en Java para crear
- * una clase simple que solo sirve para guardar datos.
- * Automáticamente nos da un constructor y los métodos para obtener los datos.
+ * Representa la entidad País con sus propiedades básicas.
+ * Se utiliza un 'record' para un modelo de datos inmutable y conciso.
+ *
+ * @param nombre El nombre completo del país (ej: "Bolivia").
+ * @param codigo El código FIFA de 3 letras del país (ej: "BOL").
  */
 public record Pais(String nombre, String codigo) {
 }

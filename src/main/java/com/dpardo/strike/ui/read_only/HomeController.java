@@ -1,4 +1,4 @@
-package com.dpardo.strike.ui.home;
+package com.dpardo.strike.ui.read_only;
 
 import com.dpardo.strike.domain.Pais;
 import com.dpardo.strike.repository.PaisRepository;
@@ -68,7 +68,7 @@ public class HomeController {
         for (Pais pais : listaDePaises) {
             try {
                 // Cargamos la plantilla FXML para una fila
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/dpardo/strike/ui/home/Pais-view.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/dpardo/strike/ui/read_only/Pais-view.fxml"));
                 Node nodoPaisItem = loader.load();
 
                 // Obtenemos el controlador de esa fila específica
