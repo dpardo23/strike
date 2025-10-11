@@ -217,3 +217,32 @@
 .superadmin-table-view .corner {
     -fx-background-color: transparent;
 }
+
+/*
+ * Estilo para el efecto Acrílico / Vidrio Esmerilado (Glassmorphism)
+ */
+.acrylic-pane {
+    /* Fondo semitransparente. Juega con el último valor (0.2) para más o menos transparencia. */
+    -fx-background-color: rgba(40, 40, 40, 0.4);
+
+    /* Bordes redondeados para un look más suave */
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+
+    /* Un borde sutil que atrapa la luz, dándole un aspecto de vidrio */
+    -fx-border-width: 1px;
+    -fx-border-color: rgba(255, 255, 255, 0.2);
+}
+
+/*
+ * Estilo base para el panel que tendrá la animación.
+ * La animación en sí se controlará desde el código Java.
+ */
+.animated-border-pane {
+    /* Define el grosor del borde que se va a animar */
+    -fx-border-width: 2px;
+
+    /* Bordes redondeados que coinciden con el panel acrílico */
+    -fx-border-radius: 15;
+    -fx-background-radius: 15; /* Asegura que el fondo también sea redondeado */
+}

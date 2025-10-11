@@ -60,7 +60,7 @@ public class HomeAdminController {
     @FXML
     public void initialize() {
         // Carga el formulario de países por defecto al iniciar
-        loadForm("/com/dpardo/strike/ui/data_writer/form-pais.fxml");
+        loadForm("/com/dpardo/strike/ui/data_writer/Form-pais.fxml");
 
         // Configura las funcionalidades del header
         setupUserInfo();
@@ -72,7 +72,7 @@ public class HomeAdminController {
     void handleMenuClick(ActionEvent event) {
         Object source = event.getSource();
         if (source == paisButton) {
-            loadForm("/com/dpardo/strike/ui/data_writer/form-pais.fxml");
+            loadForm("/com/dpardo/strike/ui/data_writer/Form-pais.fxml");
         } else if (source == equiposButton) {
             loadForm("/com/dpardo/strike/ui/data_writer/Form-equipo.fxml");
         } else if (source == ligaButton) {

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -62,17 +63,13 @@
       </VBox>
    </left>
    <center>
-      <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" maxHeight="450.0" maxWidth="750.0" minHeight="450.0" minWidth="750.0" prefHeight="450.0" prefWidth="750.0" styleClass="main-content-scrollpane" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
-         <content>
-            <VBox fx:id="mainContentContainer" maxWidth="750.0" minWidth="750.0" prefWidth="750.0" spacing="15.0">
-               <padding>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </padding>
-            </VBox>
-         </content>
+      <AnchorPane fx:id="mainContentPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <styleClass>
+            <String fx:value="acrylic-pane" />
+            <String fx:value="animated-border-pane" />
+         </styleClass>
          <BorderPane.margin>
-            <Insets right="20.0" />
-         </BorderPane.margin>
-      </ScrollPane>
+            <Insets bottom="60.0" right="60.0" top="30.0" />
+         </BorderPane.margin></AnchorPane>
    </center>
 </BorderPane>
