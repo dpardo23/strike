@@ -9,7 +9,7 @@
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ComboBox fx:id="viewSelectorComboBox" prefHeight="30.0" prefWidth="183.0" promptText="Seleccionar vista" styleClass="combo-box" />
+            <ComboBox fx:id="viewSelectorComboBox" prefHeight="30.0" prefWidth="94.0" styleClass="combo-box" />
             <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
             <Button fx:id="userInfoButton" mnemonicParsing="false" onAction="#handleUserInfoClick" styleClass="user-icon-button">
                <graphic>

@@ -36,7 +36,7 @@
       <Insets right="30.0" />
    </padding>
    <children>
-      <ImageView fitHeight="263.0" fitWidth="244.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.rowSpan="3" GridPane.valignment="CENTER">
+      <ImageView fitHeight="254.0" fitWidth="254.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.rowSpan="3" GridPane.valignment="CENTER">
          <image>
             <Image url="@../../../../../images/icons/trofeo.png" />
          </image></ImageView>

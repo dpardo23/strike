@@ -3,6 +3,8 @@ package com.dpardo.strike.repository;
 import java.math.BigDecimal;
 import java.sql.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Repositorio para gestionar las operaciones de la entidad Jugador en la base de datos.
@@ -50,6 +52,39 @@ public class JugadorRepository {
 
             // Ejecución del procedimiento
             cstmt.execute();
+        }
+    }
+
+    /**
+     * Obtiene una lista de todos los nombres de los jugadores.
+     * @return Lista de Strings con los nombres.
+     */
+    public List<String> obtenerTodosLosNombresDeJugadores() {
+        List<String> nombres = new ArrayList<>();
+        String sql = "SELECT nombre FROM public.jugador ORDER BY nombre";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
+            while (rs.next()) {
+                nombres.add(rs.getString("nombre"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return nombres;
+    }
+
+    /**
+     * Llama al procedimiento almacenado para eliminar un jugador por su nombre.
+     * @param nombre El nombre del jugador a eliminar.
+     * @throws SQLException Si ocurre un error de BD.
+     */
+    public void eliminarJugadorPorNombre(String nombre) throws SQLException {
+        String sql = "SELECT public.eliminar_jugador_por_nombre(?)";
+        try (Connection conn = DatabaseConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, nombre);
+            pstmt.execute();
         }
     }
 }

@@ -141,15 +141,20 @@ public class SuperAdminController {
     /**
      * Carga las vistas disponibles desde la BD en el ComboBox de navegación.
      */
+
     private void setupComboBox() {
-        // Mapeo de componentes a rutas FXML
         uiPathMap.put("homeBorderPane", "/com/dpardo/strike/ui/read_only/Home-view.fxml");
         uiPathMap.put("adminBorderPane", "/com/dpardo/strike/ui/data_writer/Home-admin.fxml");
         uiPathMap.put("superadminBorderPane", "/com/dpardo/strike/ui/super_user/Home-superadmin.fxml");
 
         try {
-            // Consulta a BD para obtener las UIs
-            viewSelectorComboBox.setItems(FXCollections.observableArrayList(repository.obtenerUis()));
+            // Obtenemos la sesión actual para saber qué usuario está logueado
+            SessionInfo currentSession = SessionManager.getCurrentSession();
+            if (currentSession != null) {
+                // Llamamos al nuevo método del repositorio pasándole el ID del usuario
+                int userId = currentSession.userId();
+                viewSelectorComboBox.setItems(FXCollections.observableArrayList(repository.obtenerUis(userId)));
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }

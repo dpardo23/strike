@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -9,15 +10,12 @@
    <top>
       <HBox fx:id="homeHBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-spacing: 10;" styleClass="menu-container" BorderPane.alignment="CENTER">
          <children>
+            <ComboBox fx:id="viewHomeComboBox" prefHeight="30.0" prefWidth="100.0" />
             <Button fx:id="jugadoresButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="menu-button" text="JUGADORES" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Verdana Bold" size="13.0" />
                </font>
             </Button>
-            <Button fx:id="estadisticasButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="menu-button" text="ESTADISTICAS" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Verdana Bold" size="13.0" />
-               </font></Button>
             <Button fx:id="equiposButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="menu-button" text="EQUIPOS" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Verdana Bold" size="13.0" />
@@ -30,14 +28,22 @@
                <font>
                   <Font name="Verdana Bold" size="13.0" />
                </font></Button>
-            <Button fx:id="resumenButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="menu-button" text="RESUMEN DE PARTIDO" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Verdana Bold" size="13.0" />
-               </font></Button>
             <Button fx:id="ligaButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="menu-button" text="LIGA" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Verdana Bold" size="13.0" />
                </font></Button>
+            <Button fx:id="userinfoHomeButton" mnemonicParsing="false" onAction="#handleUserInfoClick" styleClass="user-icon-button">
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../images/icons/user.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+                <tooltip>
+                    <Tooltip fx:id="usernameAdminTooltip" />
+                </tooltip>
+            </Button>
          </children>
       </HBox>
    </top>

@@ -32,4 +32,19 @@ public final class SessionManager {
     public static SessionInfo getCurrentSession() {
         return currentSession;
     }
+
+    // VvVvV MÉTODO AÑADIDO VvVvV
+    /**
+     * Obtiene el ID del usuario de la sesión actual.
+     * Este método es utilizado por DatabaseConnection para "marcar" cada nueva conexión.
+     *
+     * @return El ID del usuario si hay una sesión activa, de lo contrario null.
+     */
+    public static Integer getCurrentUserId() {
+        if (currentSession != null) {
+            return currentSession.userId();
+        }
+        return null;
+    }
+    // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 }

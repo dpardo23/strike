@@ -87,7 +87,7 @@ public class LoginController {
 
         // Determina la vista a cargar según el rol
         switch (roleName.toLowerCase()) {
-            case "read-only":
+            case "read_only":
                 fxmlPath = "/com/dpardo/strike/ui/read_only/Home-view.fxml";
                 windowTitle = "Strike - Vista de Lector";
                 break;
